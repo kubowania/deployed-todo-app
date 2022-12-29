@@ -1,0 +1,220 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(233, 241, 249);
+  display: flex;
+  justify-content: center;
+  font-family: 'Trebuchet MS', Arial, sans-serif;
+}
+
+.app {
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgba(0,0,0, 0.05) 0 6px 24px, rgba(0,0,0, 0.08) 0 0 0 1px;
+  border-radius: 10px;
+  padding: 10px;
+  width: 800px;
+  margin-top: 50px;
+}
+
+.button-container, .info-container {
+  display: flex;
+  align-items: center;
+}
+
+.button-container button {
+  margin: 0 5px;
+  padding: 5px 10px;
+  font-size: 10px;
+  border-radius: 12px;
+  background-color: transparent;
+}
+
+.edit {
+  border: 1.5px solid rgb(141, 181, 145);
+  color: rgb(141, 181, 145);
+  text-transform: uppercase;
+}
+
+.edit:hover {
+  background-color: rgb(182, 223, 186);
+}
+
+.edit:active {
+  color: rgb(255, 255, 255);
+  background-color: rgb(141, 181, 145);
+}
+
+.delete {
+  border: 1.5px solid rgb(255, 175, 163);
+  color: rgb(255, 175, 163);
+  text-transform: uppercase;
+}
+
+.delete:hover {
+  background-color: rrgb(255, 201, 193);
+}
+
+.delete:active {
+  background-color: rgb(255, 175, 163);
+  color: rgb(255, 255, 255);
+}
+
+.create {
+  border: 1.5px solid rgb(108, 115, 148);
+  color: rgb(108, 115, 148);
+  text-transform: uppercase;
+}
+
+.create:hover {
+  background-color: rgb(131, 138, 172);
+}
+
+.create:active {
+  background-color: rgb(108, 115, 148);
+  color: rgb(255, 255, 255)
+}
+
+.signout {
+  border: 1.5px solid rgb(255, 175, 163);
+  background-color: rgb(255, 175, 163) !important;
+  color: rgb(234, 234, 234);
+}
+
+.signout:hover {
+  background-color: rgb(175, 94, 94) !important;
+  border: 1.5px solid rgb(175, 94, 94);
+}
+
+.signout:active {
+  border: 1.5px solid rgb(175, 81, 81) !important;
+  background-color: rgb(175, 81, 81) !important;
+  color: rgb(255, 255, 255);
+}
+
+input {
+  margin: 11px 0;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1.5px solid rgb(230, 232, 236);
+}
+
+
+/* List Header */
+
+.list-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: rgba(0,0,0,0.05) 1px solid;
+}
+
+/* List Item */
+
+.list-item {
+  width: 100%;
+  margin: 10px 0;
+  border-radius: 10px;
+  box-shadow: rgba(0,0,0,0.08) 0 0 0 1px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.tick {
+  padding: 10px;
+}
+
+.tick path {
+  fill:none;
+  stroke:#000;
+  stroke-miterlimit:10;
+  stroke-width:32px
+}
+
+/* Modal */
+.overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  width: 500px;
+  background-color: rgb(255, 255, 255);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: rgba(0,0,0,0.05) 0 6px 24px 0, rgba(0,0,0,0.08) 0 0 0 1px;
+}
+
+.modal .form-title-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal .form-title-container button {
+  border: none;
+  background-color: transparent;
+}
+
+.modal .form-title-container button:active {
+  color: rgb(255, 50, 50);
+}
+
+.modal form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal label {
+  font-size: 13px;
+}
+
+/* Auth */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  margin: 50xp;
+}
+
+.auth-container-box {
+  width: 500px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: rgba(0,0,0,0.05) 0 6px 24px, rgba(0,0,0,0.08) 0 0 0 1px;
+}
+
+.auth-container-box form {
+  display: flex;
+  flex-direction: column;
+  height:350px;
+  padding: 20px;
+}
+
+.auth-options {
+  display: flex;
+}
+
+.auth-options button {
+  width: 50%;
+  border: none;
+  padding: 10px;
+  color: rgb(35,38, 47);
+}
+
+.copyright {
+  font-size: 13px;
+  margin: 10px;
+  color: rgb(114, 114, 144);
+}
+
+.user-email {
+  float: right;
+  font-size: 13px;
+  margin: 10px;
+  color: rgb(114, 114, 144);
+}
