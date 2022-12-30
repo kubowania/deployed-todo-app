@@ -51,7 +51,7 @@ body {
 }
 
 .delete:hover {
-  background-color: rrgb(255, 201, 193);
+  background-color: rgb(255, 201, 193);
 }
 
 .delete:active {
@@ -178,7 +178,7 @@ input {
 .auth-container {
   display: flex;
   justify-content: center;
-  margin: 50xp;
+  margin: 5px;
 }
 
 .auth-container-box {
