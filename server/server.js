@@ -63,10 +63,11 @@ app.delete('/todos/:id', async (req, res) => {
 // signup
 app.post('/signup', async (req, res) => {
   const { email, password } = req.body
-  const salt = bcrypt.genSaltSync(10)
-  const hashedPassword = bcrypt.hashSync(password, salt)
 
   try {
+      const salt = bcrypt.genSaltSync(10)
+      const hashedPassword = bcrypt.hashSync(password, salt)
+
     const signUp = await pool.query(`INSERT INTO users (email, hashed_password) VALUES($1, $2)`,
       [email, hashedPassword])
   
