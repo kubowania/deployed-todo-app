@@ -65,29 +65,61 @@ app.delete('/todos/:id', async (req, res) => {
 })
 
 // signup
-app.post('/signup', async (req, res) => {
-  const { email, password } = req.body
+// app.post('/signup', async (req, res) => {
+//   const { email, password } = req.body
 
-  try {
-      const salt = bcrypt.genSaltSync(10)
-      const hashedPassword = bcrypt.hashSync(password, salt)
+//   try {
+//       const salt = bcrypt.genSaltSync(10)
+//       const hashedPassword = bcrypt.hashSync(password, salt)
 
-    const signUp = await pool.query(`INSERT INTO users (email, hashed_password) VALUES($1, $2)`,
-      [email, hashedPassword])
+//     const signUp = await pool.query(`INSERT INTO users (email, hashed_password) VALUES($1, $2)`,
+//       [email, hashedPassword])
   
     
-    const token = jwt.sign({ email }, 'secret', { expiresIn: '1hr' })
+//     const token = jwt.sign({ email }, 'secret', { expiresIn: '1hr' })
+    
+//     res.json({ email, token })
+    
+  
+    
+//   } catch (err) {
+//     console.error(err)
+//     if (err) {
+//       res.json({ detail: err.detail})
+//     }
+
+//   }
+// })
+//sign up
+app.post('/signup', async (req, res) => {
+  try {
+      const { email, password } = req.body
+
+    console.log('PASSWORD',password)
+    
+    const salt = bcrypt.genSaltSync(10)
+    const hashedPassword = bcrypt.hashSync(password, salt)
+
+      const signUp = await pool.query(
+        `INSERT INTO users (email, hashed_password) VALUES($1, $2)`,
+        [email, hashedPassword]
+      )
+    
+      const token = jwt.sign({ email }, 'secret', { expiresIn: '1h' })
     
     res.json({ email, token })
+    const error = signUp.name === 'error'
     
+    if (!error) {
+      res.json({ email, token })
+  } else {
+      res.json({ detail: signUp.detail})
+  }
   
-    
-  } catch (err) {
-    console.error(err)
-    if (err) {
-      res.json({ detail: err.detail})
-    }
 
+  } catch (error) {
+    res.json(error)
+    console.error(error)
   }
 })
 
