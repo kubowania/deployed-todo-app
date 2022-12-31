@@ -15,6 +15,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "deploy": "npx -y serve build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
